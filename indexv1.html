@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ari Color - Litros de litros, pintura garantizada. Pintura mexicana de calidad premium.">
+    <meta name="keywords" content="pintura, litros, calidad, mexicana, interior, exterior">
+    <title>Ari Color - Litros de litros, pintura garantizada</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #e74c3c;
+            --secondary-color: #3498db;
+            --accent-color: #f39c12;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
+            --gradient: linear-gradient(135deg, #e74c3c 0%, #f39c12 100%);
+        }
+
+```
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.6;
+        color: var(--dark-color);
+    }
+
+    /* Navbar */
+    .navbar-custom {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+    }
+
+    .navbar-brand {
+        font-weight: 700;
+        font-size: 1.8rem;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .nav-link {
+        font-weight: 500;
+        color: var(--dark-color) !important;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    .nav-link:hover {
+        color: var(--primary-color) !important;
+        transform: translateY(-2px);
+    }
+
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 50%;
+        background: var(--gradient);
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+    }
+
+    .nav-link:hover::after {
+        width: 100%;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        background: var(--gradient);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" fill="rgba(255,255,255,0.1)"/></svg>') no-repeat bottom;
+        background-size: cover;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+    }
+
+    .hero-title {
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        margin-bottom: 1rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.3rem;
+        color: rgba(255,255,255,0.9);
+        margin-bottom: 2rem;
+    }
+
+    .btn-custom {
+        background: white;
+        color: var(--primary-color);
+        padding: 12px 30px;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .btn-custom:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        color: var(--primary-color);
+    }
+
+    /* Calculator Section */
+    .calculator-section {
+        background: linear-gradient(45deg, #f8f9fa 0%, #e9ecef 100%);
+        padding: 4rem 0;
+    }
+
+    .calculator-card {
+        background: white;
+        border-radius: 20px;
+        padding: 2rem;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .calculator-card:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Features */
+    .feature-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        text-align: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        height: 100%;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    }
+
+    .feature-icon {
+        width: 80px;
+        height: 80px;
+        background: var(--gradient);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+        color: white;
+        font-size: 2rem;
+    }
+
+    /* Products */
+    .product-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        height: 100%;
+    }
+
+    .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+
+    .product-image {
+        height: 200px;
+        background: var(--gradient);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 3rem;
+    }
+
+    /* Testimonials */
+    .testimonial-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        text-align: center;
+        height: 100%;
+    }
+
+    .testimonial-avatar {
+        width: 80px;
+        height: 80px;
+        background: var(--gradient);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+        color: white;
+        font-size: 2rem;
+    }
+
+    /* Sections */
+    .section-padding {
+        padding: 5rem 0;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 1rem;
+        position: relative;
+    }
+
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 4px;
+        background: var(--gradient);
+        border-radius: 2px;
+    }
+
+    .section-subtitle {
+        text-align: center;
+        color: #666;
+        margin-bottom: 3rem;
+        font-size: 1.1rem;
+    }
+
+    /* Footer */
+    .footer {
+        background: var(--dark-color);
+        color: white;
+        padding: 3rem 0 1rem;
+    }
+
+    .footer h5 {
+        color: var(--accent-color);
+        margin-bottom: 1rem;
+    }
+
+    .footer a {
+        color: rgba(255,255,255,0.7);
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .footer a:hover {
+        color: var(--accent-color);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .fade-in-up {
+        animation: fadeInUp 0.6s ease forwards;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .hero-title {
+            font-size: 2.5rem;
+        }
+        
+        .section-padding {
+            padding: 3rem 0;
+        }
+    }
+
+    /* Whatsapp Button */
+    .whatsapp-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #25d366;
+        color: white;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        text-decoration: none;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        transition: all 0.3s ease;
+        z-index: 1000;
+    }
+
+    .whatsapp-btn:hover {
+        transform: scale(1.1);
+        color: white;
+    }
+</style>
+```
+
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <i class="fas fa-paint-brush me-2"></i>Ari Color
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#why-us">¿Por qué elegirnos?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#promotions">Promociones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+```
+<!-- Hero Section -->
+<section id="home" class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="hero-content fade-in-up">
+                    <h1 class="hero-title">Ari Color</h1>
+                    <p class="hero-subtitle">"Litros de litros, pintura garantizada"</p>
+                    <p class="text-white mb-4">Pinturas mexicanas de calidad premium. Sin rebajar, con garantía de rendimiento y los mejores precios del mercado.</p>
+                    <a href="#products" class="btn-custom me-3">
+                        <i class="fas fa-shopping-cart me-2"></i>Compra Ahora
+                    </a>
+                    <a href="#calculator" class="btn btn-outline-light rounded-pill px-4">
+                        <i class="fas fa-calculator me-2"></i>Calcular Pintura
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="text-center">
+                    <i class="fas fa-paint-roller" style="font-size: 15rem; color: rgba(255,255,255,0.2);"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Calculator Section -->
+<section id="calculator" class="calculator-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="calculator-card">
+                    <h3 class="text-center mb-4">
+                        <i class="fas fa-calculator text-primary me-2"></i>
+                        Calculadora de Pintura
+                    </h3>
+                    <p class="text-center text-muted mb-4">Calcula exactamente cuánta pintura necesitas para tu proyecto</p>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Ancho de la pared (metros)</label>
+                                <input type="number" class="form-control" id="width" placeholder="Ej: 4" step="0.1" min="0">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Alto de la pared (metros)</label>
+                                <input type="number" class="form-control" id="height" placeholder="Ej: 3" step="0.1" min="0">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Número de manos/pasadas</label>
+                                <select class="form-select" id="coats">
+                                    <option value="1">1 mano</option>
+                                    <option value="2" selected>2 manos (recomendado)</option>
+                                    <option value="3">3 manos</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">Calidad de la pintura</label>
+                                <select class="form-select" id="quality">
+                                    <option value="basica">Básica (8-10 m²/litro)</option>
+                                    <option value="media" selected>Media (10-12 m²/litro)</option>
+                                    <option value="premium">Premium (12-14 m²/litro)</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Tipo de superficie</label>
+                                <select class="form-select" id="surface">
+                                    <option value="lisa">Lisa (mejor rendimiento)</option>
+                                    <option value="texturizada" selected>Texturizada (rendimiento medio)</option>
+                                    <option value="rugosa">Rugosa (menor rendimiento)</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Número de paredes</label>
+                                <input type="number" class="form-control" id="walls" placeholder="Ej: 1" value="1" min="1" max="20">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button class="btn btn-primary btn-lg rounded-pill px-5" onclick="calculatePaint()">
+                            <i class="fas fa-calculator me-2"></i>Calcular
+                        </button>
+                    </div>
+                    
+                    <div id="result" class="mt-4" style="display: none;">
+                        <div class="alert alert-success">
+                            <h5 class="text-center mb-3"><i class="fas fa-paint-brush me-2"></i>Resultado del Cálculo</h5>
+                            
+                            <div class="row text-center mb-3">
+                                <div class="col-md-4">
+                                    <div class="p-3 bg-white rounded">
+                                        <small class="text-muted d-block">Área total</small>
+                                        <strong id="totalArea" class="fs-5 text-primary"></strong>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="p-3 bg-white rounded">
+                                        <small class="text-muted d-block">Rendimiento</small>
+                                        <strong id="coverage" class="fs-5 text-primary"></strong>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="p-3 bg-white rounded">
+                                        <small class="text-muted d-block">Litros necesarios</small>
+                                        <strong id="liters" class="fs-5 text-primary"></strong>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="text-center p-3 bg-white rounded">
+                                <p class="mb-2"><strong>Recomendación de compra:</strong></p>
+                                <p class="mb-0 fs-5 text-success" id="recommendation"></p>
+                            </div>
+                            
+                            <div class="mt-3 p-3 bg-light rounded">
+                                <small class="text-muted" id="details"></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="section-padding">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h2 class="section-title text-start">Nosotros</h2>
+                <p class="lead">Somos una empresa 100% mexicana comprometida con la calidad y la confianza.</p>
+                <p>En Ari Color, creemos que cada proyecto merece la mejor pintura. Por eso, ofrecemos productos de calidad premium, sin rebajar, con la garantía de rendimiento que necesitas.</p>
+                <p>Nuestro compromiso es contigo: trato atento, productos confiables y precios justos. Porque tu hogar merece lo mejor.</p>
+                <div class="row mt-4">
+                    <div class="col-6">
+                        <div class="text-center">
+                            <h3 class="text-primary">+1000</h3>
+                            <p>Clientes satisfechos</p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="text-center">
+                            <h3 class="text-primary">100%</h3>
+                            <p>Calidad mexicana</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="text-center">
+                    <i class="fas fa-users" style="font-size: 12rem; color: var(--primary-color); opacity: 0.1;"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Products Section -->
+<section id="products" class="section-padding bg-light">
+    <div class="container">
+        <h2 class="section-title">Nuestros Productos</h2>
+        <p class="section-subtitle">Pintura de calidad premium en diferentes presentaciones</p>
+        
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="product-card">
+                    <div class="product-image">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <div class="card-body p-4">
+                        <h5 class="card-title">Pintura Interior</h5>
+                        <p class="card-text">Perfecta para interiores, fácil aplicación y excelente cobertura.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="h5 text-primary mb-0">Desde $180</span>
+                            <button class="btn btn-outline-primary btn-sm">Ver más</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="product-card">
+                    <div class="product-image">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="card-body p-4">
+                        <h5 class="card-title">Pintura Exterior</h5>
+                        <p class="card-text">Resistente a la intemperie, protección duradera para exteriores.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="h5 text-primary mb-0">Desde $220</span>
+                            <button class="btn btn-outline-primary btn-sm">Ver más</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="product-card">
+                    <div class="product-image">
+                        <i class="fas fa-fill-drip"></i>
+                    </div>
+                    <div class="card-body p-4">
+                        <h5 class="card-title">Combo Especial</h5>
+                        <p class="card-text">3 galones a precio especial. Ideal para proyectos grandes.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="h5 text-primary mb-0">$1,899</span>
+                            <button class="btn btn-primary btn-sm">¡Oferta!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section id="why-us" class="section-padding">
+    <div class="container">
+        <h2 class="section-title">¿Por qué elegirnos?</h2>
+        <p class="section-subtitle">Lo que nos hace diferentes en el mercado</p>
+        
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-droplet"></i>
+                    </div>
+                    <h5>Litros Reales</h5>
+                    <p>Garantizamos el litro completo. Sin trucos, sin sorpresas.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h5>Sin Rebajar</h5>
+                    <p>Pintura pura, sin diluyentes que comprometan la calidad.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h5>Precio Justo</h5>
+                    <p>La mejor relación calidad-precio del mercado.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h5>Garantía</h5>
+                    <p>Respaldamos la calidad de nuestros productos al 100%.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="section-padding bg-light">
+    <div class="container">
+        <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+        <p class="section-subtitle">Testimonios reales de clientes satisfechos</p>
+        
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <p class="fst-italic">"Excelente calidad y rendimiento. Realmente dan los litros completos y la pintura cubre perfectamente."</p>
+                    <h6 class="text-primary">María González</h6>
+                    <small class="text-muted">Ciudad de México</small>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <p class="fst-italic">"Los precios son muy competitivos y la atención al cliente es excelente. Totalmente recomendado."</p>
+                    <h6 class="text-primary">Carlos Ramírez</h6>
+                    <small class="text-muted">Guadalajara</small>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <p class="fst-italic">"Pinté toda mi casa con Ari Color. La calidad es excelente y el resultado quedó hermoso."</p>
+                    <h6 class="text-primary">Ana Martínez</h6>
+                    <small class="text-muted">Monterrey</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Promotions Section -->
+<section id="promotions" class="section-padding">
+    <div class="container">
+        <h2 class="section-title">Promociones Especiales</h2>
+        <p class="section-subtitle">Aprovecha nuestras ofertas limitadas</p>
+        
+        <div class="row g-4">
+            <div class="col-lg-6">
+                <div class="card border-0 shadow-sm h-100" style="background: linear-gradient(45deg, #ff6b6b, #feca57);">
+                    <div class="card-body p-4 text-white">
+                        <h3><i class="fas fa-fire me-2"></i>¡Combo 3x2!</h3>
+                        <p class="lead">Compra 2 galones y llévate 1 GRATIS</p>
+                        <p>Válido solo este mes. Aplica para pintura interior y exterior.</p>
+                        <button class="btn btn-light btn-lg">¡Aprovechar Oferta!</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card border-0 shadow-sm h-100" style="background: linear-gradient(45deg, #667eea, #764ba2);">
+                    <div class="card-body p-4 text-white">
+                        <h3><i class="fas fa-percentage me-2"></i>15% Descuento</h3>
+                        <p class="lead">En compras mayores a $2,000</p>
+                        <p>Descuento adicional para proyectos grandes. Cotiza tu proyecto.</p>
+                        <button class="btn btn-light btn-lg">Cotizar Proyecto</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="section-padding bg-light">
+    <div class="container">
+        <h2 class="section-title">Contacto</h2>
+        <p class="section-subtitle">Estamos aquí para ayudarte con tu proyecto</p>
+        
+        <div class="row g-5">
+            <div class="col-lg-6">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body p-4">
+                        <h5 class="mb-4"><i class="fas fa-envelope me-2 text-primary"></i>Envíanos un mensaje</h5>
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" class="form-control" placeholder="Nombre">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="email" class="form-control" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <input type="tel" class="form-control" placeholder="Teléfono">
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="4" placeholder="¿En qué podemos ayudarte?"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg w-100">
+                                <i class="fas fa-paper-plane me-2"></i>Enviar Mensaje
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="row g-4">
+                    <div class="col-12">
+                        <div class="d-flex align-items-center">
+                            <div class="feature-icon me-3" style="width: 60px; height: 60px; font-size: 1.5rem;">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">Teléfono</h6>
+                                <p class="mb-0 text-muted">+52 55 1234 5678</p>
+                            </div>
+```
+</div>
+                    </div>
+                    <div class="col-12">
+                        <div class="d-flex align-items-center">
+                            <div class="feature-icon me-3" style="width: 60px; height: 60px; font-size: 1.5rem;">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">WhatsApp</h6>
+                                <p class="mb-0 text-muted">+52 55 1234 5678</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="d-flex align-items-center">
+                            <div class="feature-icon me-3" style="width: 60px; height: 60px; font-size: 1.5rem;">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">Email</h6>
+                                <p class="mb-0 text-muted">ventas@aricolor.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="d-flex align-items-center">
+                            <div class="feature-icon me-3" style="width: 60px; height: 60px; font-size: 1.5rem;">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">Ubicación</h6>
+                                <p class="mb-0 text-muted">Ciudad de México</p>
+                            </div>
+                        </div>
+                    </div>
+<div class="col-12">
+                        <div class="d-flex align-items-center">
+                            <div class="feature-icon me-3" style="width: 60px; height: 60px; font-size: 1.5rem;">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">Horario</h6>
+                                <p class="mb-0 text-muted">Lun - Sáb: 8:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <h5><i class="fas fa-paint-brush me-2"></i>Ari Color</h5>
+                <p class="text-muted">"Litros de litros, pintura garantizada"</p>
+                <p class="text-muted">Tu aliado en proyectos de pintura. Calidad mexicana, precios justos y atención personalizada.</p>
+            </div>
+            <div class="col-lg-2">
+                <h5>Enlaces</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#about">Nosotros</a></li>
+                    <li><a href="#products">Productos</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <h5>Productos</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Pintura Interior</a></li>
+                    <li><a href="#">Pintura Exterior</a></li>
+                    <li><a href="#">Combos Especiales</a></li>
+                    <li><a href="#">Accesorios</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <h5>Síguenos</h5>
+                <div class="d-flex gap-3 mb-3">
+                    <a href="#" class="text-white-50 fs-4"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-white-50 fs-4"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white-50 fs-4"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                <p class="text-muted small">Mantente al día con nuestras ofertas y consejos de pintura.</p>
+            </div>
+        </div>
+
+
+
+<hr class="my-4">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <p class="text-muted small mb-0">&copy; 2024 Ari Color. Todos los derechos reservados.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <small class="text-muted">
+                    <a href="#" class="text-muted me-3">Términos y Condiciones</a>
+                    <a href="#" class="text-muted">Política de Privacidad</a>
+                </small>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/5512345678?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20sus%20productos" class="whatsapp-btn" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Paint Calculator Function with Quality Options
+    function calculatePaint() {
+        // Get input values
+        const width = parseFloat(document.getElementById('width').value) || 0;
+        const height = parseFloat(document.getElementById('height').value) || 0;
+        const coats = parseInt(document.getElementById('coats').value) || 2;
+        const walls = parseInt(document.getElementById('walls').value) || 1;
+        const quality = document.getElementById('quality').value;
+        const surface = document.getElementById('surface').value;
+
+        // Validate inputs
+        if (width <= 0 || height <= 0) {
+            alert('Por favor, ingresa medidas válidas para ancho y alto');
+            return;
+        }
+
+        // Define coverage based on quality (m²/litro)
+        let baseCoverage = {
+            'basica': 9,    // 8-10 m²/litro (promedio 9)
+            'media': 11,    // 10-12 m²/litro (promedio 11)
+            'premium': 13   // 12-14 m²/litro (promedio 13)
+        };
+
+        // Adjust coverage based on surface type
+        let surfaceMultiplier = {
+            'lisa': 1.1,        // +10% mejor rendimiento
+            'texturizada': 1.0,  // rendimiento normal
+            'rugosa': 0.85      // -15% rendimiento
+        };
+
+        // Calculate final coverage
+        let coveragePerLiter = baseCoverage[quality] * surfaceMultiplier[surface];
+
+        // Calculate total area
+        const areaPerWall = width * height;
+        const totalArea = areaPerWall * walls;
+
+        // Calculate total area with coats
+        const totalAreaWithCoats = totalArea * coats;
+
+        // Calculate liters needed
+        const litersNeeded = totalAreaWithCoats / coveragePerLiter;
+        
+        // Add 10% extra for waste and touch-ups
+        const litersWithExtra = litersNeeded * 1.1;
+        const roundedLiters = Math.ceil(litersWithExtra * 10) / 10;
+
+        // Recommendation logic
+        let recommendation = '';
+        let purchaseOption = '';
+        
+        if (roundedLiters <= 1) {
+            recommendation = '1 litro';
+            purchaseOption = '1 envase de 1 litro';
+        } else if (roundedLiters <= 4) {
+            recommendation = '1 galón (4 litros)';
+            purchaseOption = '1 galón de 4 litros';
+        } else if (roundedLiters <= 19) {
+            const gallons = Math.ceil(roundedLiters / 4);
+            recommendation = `${gallons} galón(es) (${gallons * 4} litros)`;
+            purchaseOption = gallons === 1 ? '1 galón de 4 litros' : `${gallons} galones de 4 litros`;
+        } else {
+            const buckets = Math.ceil(roundedLiters / 19);
+            recommendation = `${buckets} cubeta(s) (${buckets * 19} litros)`;
+            purchaseOption = buckets === 1 ? '1 cubeta de 19 litros' : `${buckets} cubetas de 19 litros`;
+        }
+
+        // Quality names for display
+        const qualityNames = {
+            'basica': 'Básica',
+            'media': 'Media',
+            'premium': 'Premium'
+        };
+
+        const surfaceNames = {
+            'lisa': 'Lisa',
+            'texturizada': 'Texturizada',
+            'rugosa': 'Rugosa'
+        };
+
+        // Display results
+        document.getElementById('totalArea').textContent = totalArea.toFixed(2) + ' m²';
+        document.getElementById('coverage').textContent = coveragePerLiter.toFixed(1) + ' m²/L';
+        document.getElementById('liters').textContent = roundedLiters + ' litros';
+        document.getElementById('recommendation').innerHTML = `<i class="fas fa-shopping-cart me-2"></i>${recommendation}`;
+        
+        // Display detailed information
+        const detailsText = `
+            <strong>Detalles del cálculo:</strong><br>
+            • ${walls} pared(es) de ${width}m × ${height}m = ${areaPerWall.toFixed(2)} m² cada una<br>
+            • Área total: ${totalArea.toFixed(2)} m² × ${coats} mano(s) = ${totalAreaWithCoats.toFixed(2)} m² a pintar<br>
+            • Calidad: ${qualityNames[quality]} | Superficie: ${surfaceNames[surface]}<br>
+            • Rendimiento: ${coveragePerLiter.toFixed(1)} m² por litro<br>
+            • Incluye 10% extra para desperdicios y retoques
+        `;
+        
+        document.getElementById('details').innerHTML = detailsText;
+        document.getElementById('result').style.display = 'block';
+
+        // Scroll to result
+        document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    // Allow Enter key to calculate
+    document.addEventListener('DOMContentLoaded', function() {
+        const inputs = document.querySelectorAll('#width, #height, #walls');
+        inputs.forEach(input => {
+            input.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    calculatePaint();
+                }
+            });
+        });
+    });
+
+
+
+// Recommendation logic
+        let recommendation = '';
+        if (roundedLiters <= 1) {
+            recommendation = '1 litro';
+        } else if (roundedLiters <= 4) {
+            recommendation = '1 galón (4 litros)';
+        } else if (roundedLiters <= 19) {
+            recommendation = '1 cubeta (19 litros)';
+        } else {
+            const buckets = Math.ceil(roundedLiters / 19);
+            recommendation = `${buckets} cubetas (${buckets * 19} litros)`;
+        }
+
+        // Display results
+        document.getElementById('liters').textContent = roundedLiters;
+        document.getElementById('recommendation').textContent = recommendation;
+        document.getElementById('result').style.display = 'block';
+
+        // Scroll to result
+        document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const offsetTop = target.offsetTop - 80;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar-custom');
+        if (window.scrollY > 50) {
+            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.15)';
+        } else {
+            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+        }
+    });
+
+Animation on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Observe elements for animation
+    document.addEventListener('DOMContentLoaded', function() {
+        const animateElements = document.querySelectorAll('.feature-card, .product-card, .testimonial-card');
+        animateElements.forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    });
+
+    // Form submission
+    document.querySelector('form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('¡Gracias por tu mensaje! Te contactaremos pronto.');
+        this.reset();
+    });
+
+    // Product buttons functionality
+    document.querySelectorAll('.product-card button').forEach(button => {
+        button.addEventListener('click', function() {
+            const productName = this.closest('.product-card').querySelector('.card-title').textContent;
+            alert(`Más información sobre: ${productName}\n\nPróximamente tendremos un catálogo detallado.`);
+        });
+    });
+
+    // Promotion buttons functionality
+    document.querySelectorAll('#promotions .card button').forEach(button => {
+        button.addEventListener('click', function() {
+            const promoTitle = this.closest('.card').querySelector('h3').textContent;
+            alert(`¡Excelente elección!\n\n${promoTitle}\n\nContáctanos para aprovechar esta oferta.`);
+        });
+    });
+</script>
+</body>
