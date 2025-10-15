@@ -12,6 +12,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico.png">
     <style>
         :root {
             --primary-color: #e74c3c;
@@ -330,6 +331,28 @@
         .footer a:hover {
             color: var(--accent-color);
         }
+        .hero-subtitle {
+    font-size: 1.3rem;
+    color: white;
+    margin-bottom: 2rem;
+    background: var(--accent-color);
+    padding: 15px 30px;
+    display: inline-block;
+    border-radius: 50% 20% / 10% 40%;
+    box-shadow: 0 5px 15px rgba(243, 156, 18, 0.4);
+    transform: rotate(-1deg);
+}
+
+.hero-description {
+    color: white;
+    background: linear-gradient(135deg, rgba(243, 156, 18, 0.95) 0%, rgba(230, 126, 34, 0.95) 100%);
+    padding: 20px 30px;
+    display: inline-block;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    box-shadow: 0 5px 20px rgba(243, 156, 18, 0.5);
+    transform: rotate(1deg);
+    max-width: 600px;
+}
 
         /* Animations */
         @keyframes fadeInUp {
@@ -431,9 +454,9 @@
                 <div class="col-lg-6">
                     <div class="hero-content fade-in-up">
                         <h1 class="hero-title">Ari Color</h1>
-                        <p class="hero-subtitle">"Litros de litros, pintura garantizada"</p>
-                        <p class="text-white mb-4">Pinturas mexicanas de calidad premium. Sin rebajar, con garantía de
-                            rendimiento y los mejores precios del mercado.</p>
+                       
+<p class="hero-subtitle">"Litros de litros, pintura garantizada"</p>
+<p class="hero-description mb-4">Pinturas mexicanas de calidad premium. Sin rebajar, con garantía de rendimiento y los mejores precios del mercado.</p>
                         <a href="#products" class="btn-custom me-3">
                             <i class="fas fa-shopping-cart me-2"></i>Compra Ahora
                         </a>
