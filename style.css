@@ -247,7 +247,7 @@
         }
 
         .copy-btn {
-            background: var(--gradient);
+            background: #3498db;
             border: none;
             color: white;
             padding: 8px 16px;
@@ -497,15 +497,12 @@
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
         }
 
-        .product-image {
-            height: 200px;
-            background: var(--gradient);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3rem;
-        }
+
+.product-image {
+  width: 10%;
+  max-width: 100px; /* o el tamaño que necesites */
+}
+
 
         /* Testimonials */
         .testimonial-card {
