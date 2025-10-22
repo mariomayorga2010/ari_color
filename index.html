@@ -278,8 +278,131 @@
                     </div>
                 </div>
             </div>
+            <div class="container py-5">
+        
+        
+        <!-- Catalog Toggle Button -->
+        <div class="catalog-toggle-wrapper">
+            <button class="catalog-toggle-btn" id="catalogToggle">
+                <i class="fas fa-palette"></i>
+                <span>Ver Catálogo de Colores</span>
+            </button>
+        </div>
+
+        <!-- Collapsible Catalog Section -->
+        <div class="catalog-collapsible" id="catalogSection">
+            <div class="catalog-section">
+                <div class="container">
+                    <h2 class="section-title">
+                        <i class="fas fa-palette me-2" style="color: var(--primary-color);"></i>
+                        Catálogo de Colores
+                    </h2>
+                    <p class="section-subtitle">Explora nuestra amplia gama de colores premium</p>
+
+                    <!-- Filtros y Búsqueda -->
+                    <div class="filter-container">
+                        <div class="row align-items-center mb-3">
+                            <div class="col-md-6">
+                                <input type="text" id="searchInput" class="form-control search-box" placeholder="Buscar por nombre o código...">
+                            </div>
+                            <div class="col-md-6 text-end">
+                                <span id="colorCount" class="text-muted">50 colores disponibles</span>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button class="filter-btn active" data-category="all">Todos</button>
+                            <button class="filter-btn" data-category="calidos">Cálidos</button>
+                            <button class="filter-btn" data-category="frios">Fríos</button>
+                            <button class="filter-btn" data-category="neutros">Neutros</button>
+                            <button class="filter-btn" data-category="pasteles">Pasteles</button>
+                            <button class="filter-btn" data-category="intensos">Intensos</button>
+                        </div>
+                    </div>
+
+                    <!-- Grid de Colores -->
+                    <div id="colorGrid" class="color-grid"></div>
+
+                    <!-- Mensaje cuando no hay resultados -->
+                    <div id="noResults" class="text-center py-5" style="display: none;">
+                        <i class="fas fa-search fs-1 text-muted mb-3"></i>
+                        <p class="text-muted">No se encontraron colores con ese criterio</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Detalle -->
+    <div class="modal fade" id="colorModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title">Detalle del Color</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            
+                            <div class="col-lg-12">
+                            <div class="pinterest-container">
+                                
+                                <div class="pinterest-embed-wrapper">
+                                    <iframe src="https://assets.pinterest.com/ext/embed.html?id=1688791335956485" 
+                                            height="450" 
+                                            width="100%" 
+                                            frameborder="0" 
+                                            scrolling="no"
+                                            style="border-radius: 10px;">
+                                    </iframe>
+                                </div>
+                                <h5 class="mb-3">
+                                    <i class="fab fa-pinterest text-danger me-2"></i>
+                                    Inspiración de Pinterest
+                                </h5>
+                                <p class="text-muted small mt-2">
+                                    <i class="fas fa-lightbulb me-1"></i>
+                                    Ideas de decoración usando este color
+                                </p>
+
+                            </div>
+                        </div>
+                        </div>
+                        <div class="col-md-4">
+                            
+                            <div id="modalColorPreview" class="modal-color-preview"></div>
+                            <div class="color-detail-info">
+                                <h3 id="modalColorName" class="color-detail-name"></h3>
+                                <div class="detail-item">
+                                    <div class="detail-label">Código</div>
+                                    <div class="detail-value" id="modalColorCode"></div>
+                                    <button class="copy-btn mt-2" onclick="copyCode()">
+                                        <i class="fas fa-copy me-1"></i> Copiar código
+                                    </button>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Categoría</div>
+                                    <div class="detail-value" id="modalColorCategory"></div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Ideal para</div>
+                                    <div class="detail-value" id="modalColorUse"></div>
+                                </div>
+                                <div class="mt-4">
+                                    <a href="https://wa.me/5512345678" class="btn btn-success w-100 rounded-pill" target="_blank">
+                                        <i class="fab fa-whatsapp me-2"></i>Solicitar Muestra
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
         </div>
     </section>
+
 
     <!-- Why Choose Us Section -->
     <section id="why-us" class="section-padding">
@@ -566,6 +689,181 @@
     </a>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Base de datos de colores
+        const colorsDatabase = [
+            // Cálidos
+            { id: 743, name: 'Coral', code: '#e56a61', category: 'calidos', use: 'Acentos y detalles' },
+            { id: 710, name: 'Champaña', code: '#f7e5b4', category: 'calidos', use: 'Espacios elegantes' },
+            { id: 705, name: 'Paja', code: '#f7d69c', category: 'calidos', use: 'Dormitorios' },
+            { id: 726, name: 'Tangerina', code: '#dd722a', category: 'calidos', use: 'Espacios creativos' },
+            { id: 702, name: 'Crema', code: '#f9d69f', category: 'calidos', use: 'Salas' },
+            { id: 744, name: 'Mango', code: '#ea8028', category: 'calidos', use: 'Cocinas' },
+            { id: 727, name: 'Durazno', code: '#f4ba80', category: 'calidos', use: 'Habitaciones infantiles' },
+            { id: 717, name: 'Gris Sombra', code: '#afaead', category: 'calidos', use: 'Espacios modernos' },
+            { id: 704, name: 'Amarillo Napolitano', code: '#f09b55', category: 'calidos', use: 'Comedores' },
+            { id: 711, name: 'Rosa Mexicano', code: '#b63c74', category: 'calidos', use: 'Detalles decorativos' },
+            { id: 721, name: 'Amarillo Limón', code: '#fdde0e', category: 'calidos', use: 'Energía y alegría' },
+            { id: 732, name: 'Mostaza', code: '#a57e37', category: 'calidos', use: 'Calidez vintage' },
+            { id: 724, name: 'Negro', code: '#1c120e', category: 'calidos', use: 'Elegancia dramática' },
+            { id: 708, name: 'Rojo Indio', code: '#3f1b0e', category: 'calidos', use: 'Acentos rústicos' },
+            { id: 707, name: 'Café', code: '#35241a', category: 'calidos', use: 'Ambientes acogedores' },
+            { id: 729, name: 'Chicle', code: '#8e285b', category: 'calidos', use: 'Toques juveniles' },
+            
+            // Fríos
+            { id: 701, name: 'Blanco Amanecer', code: '#edf9f1', category: 'frios', use: 'Baños' },
+            { id: 703, name: 'Olivo', code: '#7f846a', category: 'frios', use: 'Naturaleza' },
+            { id: 716, name: 'Celeste', code: '#81caeb', category: 'frios', use: 'Espacios tranquilos' },
+            { id: 742, name: 'Verde Arruba', code: '#59a233', category: 'frios', use: 'Frescura natural' },
+            { id: 730, name: 'Verde Cordova', code: '#509856', category: 'frios', use: 'Jardines interiores' },
+            { id: 740, name: 'Uva', code: '#62376d', category: 'frios', use: 'Dormitorios' },
+            { id: 722, name: 'Azul Colonial', code: '#1f1e6c', category: 'frios', use: 'Elegancia clásica' },
+            { id: 714, name: 'Concreto', code: '#9aa3a8', category: 'frios', use: 'Minimalismo' },
+            { id: 728, name: 'Azul Acero', code: '#2e4972', category: 'frios', use: 'Oficinas' },
+            
+            // Neutros
+            { id: 700, name: 'Blanco', code: '#ffffff', category: 'neutros', use: 'Todos los espacios' },
+            
+            // Pasteles
+            { id: 735, name: 'Blanco Ostión', code: '#e5e0d2', category: 'pasteles', use: 'Elegancia suave' },
+            { id: 712, name: 'Rosa Pastel', code: '#b2367a', category: 'pasteles', use: 'Suavidad y romanticismo' },
+            
+            // Intensos
+            { id: 731, name: 'Verde Tierno', code: '#a6c41f', category: 'intensos', use: 'Energía vibrante' },
+            { id: 715, name: 'Azul Griego', code: '#147ebd', category: 'intensos', use: 'Mar Mediterráneo' },
+            { id: 719, name: 'Naranja', code: '#c13b06', category: 'intensos', use: 'Acentos llamativos' },
+            { id: 734, name: 'Violeta', code: '#1c0351', category: 'intensos', use: 'Lujo y misterio' },
+            { id: 720, name: 'Rojo', code: '#a91318', category: 'intensos', use: 'Pasión y energía' },
+            { id: 706, name: 'Azul Intenso', code: '#091f56', category: 'intensos', use: 'Profundidad' },
+            { id: 745, name: 'Red Barón', code: '#680f12', category: 'intensos', use: 'Elegancia intensa' },
+            { id: 709, name: 'Turquesa', code: '#088592', category: 'intensos', use: 'Frescura moderna' },
+            { id: 741, name: 'Azul Rey', code: '#002776', category: 'intensos', use: 'Realeza' },
+            { id: 718, name: 'Verde Esmeralda', code: '#032b1d', category: 'intensos', use: 'Naturaleza profunda' },
+            { id: 723, name: 'Naranja Básico', code: '#d64b25', category: 'intensos', use: 'Vitalidad' },
+            { id: 713, name: 'Ambar', code: '#eaa00c', category: 'intensos', use: 'Calidez brillante' }
+        ];
+
+        let currentColors = [...colorsDatabase];
+        let selectedColor = null;
+
+        // Toggle catalog
+        document.getElementById('catalogToggle').addEventListener('click', function() {
+            const catalogSection = document.getElementById('catalogSection');
+            const btn = this;
+            
+            catalogSection.classList.toggle('show');
+            btn.classList.toggle('active');
+            
+            const btnText = btn.querySelector('span');
+            if (catalogSection.classList.contains('show')) {
+                btnText.textContent = 'Ocultar Catálogo';
+                setTimeout(() => {
+                    catalogSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 300);
+            } else {
+                btnText.textContent = 'Ver Catálogo de Colores';
+            }
+        });
+
+        // Renderizar colores
+        function renderColors(colors) {
+            const grid = document.getElementById('colorGrid');
+            const noResults = document.getElementById('noResults');
+            
+            if (colors.length === 0) {
+                grid.innerHTML = '';
+                noResults.style.display = 'block';
+                return;
+            }
+            
+            noResults.style.display = 'none';
+            grid.innerHTML = colors.map((color, index) => `
+                <div class="color-card fade-in-up" style="animation-delay: ${index * 0.05}s" onclick="showColorDetail(${index})">
+                    <div class="color-swatch" style="background: ${color.code}"></div>
+                    <div class="color-info">
+                        <div class="color-name">${color.name}</div>
+                        <div class="color-code">${color.code}</div>
+                        <span class="color-tag">${getCategoryLabel(color.category)}</span>
+                    </div>
+                </div>
+            `).join('');
+            
+            updateColorCount(colors.length);
+        }
+
+        // Mostrar detalle del color
+        function showColorDetail(index) {
+            selectedColor = currentColors[index];
+            document.getElementById('modalColorPreview').style.background = selectedColor.code;
+            document.getElementById('modalColorName').textContent = selectedColor.name;
+            document.getElementById('modalColorCode').textContent = selectedColor.code;
+            document.getElementById('modalColorCategory').textContent = getCategoryLabel(selectedColor.category);
+            document.getElementById('modalColorUse').textContent = selectedColor.use;
+            
+            const modal = new bootstrap.Modal(document.getElementById('colorModal'));
+            modal.show();
+        }
+
+        // Copiar código de color
+        function copyCode() {
+            navigator.clipboard.writeText(selectedColor.code);
+            alert('¡Código copiado: ' + selectedColor.code + '!');
+        }
+
+        // Filtrar por categoría
+        function filterByCategory(category) {
+            if (category === 'all') {
+                currentColors = [...colorsDatabase];
+            } else {
+                currentColors = colorsDatabase.filter(color => color.category === category);
+            }
+            renderColors(currentColors);
+        }
+
+        // Buscar colores
+        function searchColors(query) {
+            const searchTerm = query.toLowerCase();
+            currentColors = colorsDatabase.filter(color => 
+                color.name.toLowerCase().includes(searchTerm) ||
+                color.code.toLowerCase().includes(searchTerm)
+            );
+            renderColors(currentColors);
+        }
+
+        // Obtener etiqueta de categoría
+        function getCategoryLabel(category) {
+            const labels = {
+                calidos: 'Cálido',
+                frios: 'Frío',
+                neutros: 'Neutro',
+                pasteles: 'Pastel',
+                intensos: 'Intenso'
+            };
+            return labels[category] || category;
+        }
+
+        // Actualizar contador
+        function updateColorCount(count) {
+            document.getElementById('colorCount').textContent = `${count} color${count !== 1 ? 'es' : ''} disponible${count !== 1 ? 's' : ''}`;
+        }
+
+        // Event Listeners
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                filterByCategory(this.dataset.category);
+            });
+        });
+
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            searchColors(e.target.value);
+        });
+
+        // Inicializar
+        renderColors(colorsDatabase);
+    </script>
 
 
 </body>

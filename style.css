@@ -25,6 +25,79 @@
             color: var(--dark-color);
         }
 
+
+         /* Catalog Toggle Button */
+        .catalog-toggle-wrapper {
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .catalog-toggle-btn {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 20px 50px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .catalog-toggle-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .catalog-toggle-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .catalog-toggle-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(231, 76, 60, 0.4);
+        }
+
+        .catalog-toggle-btn i {
+            margin-right: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .catalog-toggle-btn.active i {
+            transform: rotate(180deg);
+        }
+
+        /* Catalog Section Collapsible */
+        .catalog-collapsible {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+        }
+
+        .catalog-collapsible.show {
+            max-height: 5000px;
+            opacity: 1;
+            transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease 0.2s;
+        }
+
+        .catalog-section {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
          /* Filtros */
         .filter-container {
             background: white;
